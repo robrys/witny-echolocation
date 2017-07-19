@@ -208,3 +208,21 @@
     border-width:3px;
 
 }
+
+#search_form{
+    position: absolute;
+    top:20px;
+    left:20px;
+    z-index:2;
+    width:100%;
+}
+#search_input{
+    width:300px;
+    height:50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius:4px;
+    font-size: 20px;
+    padding-left: 15px;
+}
