@@ -22,6 +22,7 @@
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Dropdown</button>
   <div id="myDropdown" class="dropdown-content">
+    <a href="#" onclick="showAll()">All</a>
     <a href="#" onclick="showOnlyStories()">Stories</a>
     <a href="#" onclick="showOnlyComplaints()">Complaints</a>
   </div>
@@ -57,6 +58,11 @@ document.getElementById("gpin5").style.left = 460 + "px";
 document.getElementById("gpin5").style.top = 480 + "px";
 function myFunction() {
 	suppress_popup = true;
+}
+
+function showAll() {
+	show_pins("green_pin");
+	show_pins("red_pin");
 }
 
 function showOnlyStories() {
