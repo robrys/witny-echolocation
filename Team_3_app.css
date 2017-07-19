@@ -4,6 +4,7 @@
 	margin: 0 auto;
 	margin-top:70px;
 	display: inline;
+    position:relative;
 }
 
 #map_img{
@@ -11,12 +12,10 @@
 	border-color: black;
 	border-radius:6px;
 	border-width:5px;
-<<<<<<< HEAD
-    /*display: inline;*/
-=======
+
     width: 500px;
     height: 800px;
->>>>>>> 2922b97c654c2b19b1c417b4995a48bec8fbafc3
+    position: absolute;
 }
 
 .red_pin {
@@ -31,11 +30,9 @@
 	position: absolute;
 	bottom: 0;
 	right:0;
-<<<<<<< HEAD
-=======
+
     /*z-index: 2;*/
 	/*visibility: hidden;*/
->>>>>>> 2922b97c654c2b19b1c417b4995a48bec8fbafc3
 }
 
 
@@ -159,8 +156,16 @@
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    /*position: absolute;*/
+    position: absolute;
+    top: 20px;
+    left: 400px;
+    z-index: 2;
     display: inline-block;
+    border-radius:5px;
+    border-color: black;
+    border-width:2px;
+    border-style: solid;
+    
 }
 
 /* Dropdown Content (Hidden by Default) */
