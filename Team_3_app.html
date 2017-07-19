@@ -57,15 +57,20 @@ document.getElementById("gpin4").style.left = 70 + "px";
 document.getElementById("gpin4").style.top = 330 + "px";
 document.getElementById("gpin5").style.left = 460 + "px";
 document.getElementById("gpin5").style.top = 480 + "px";
+function myFunction() {
+	suppress_popup = true;
+}
 
 function showOnlyStories() {
 	suppress_popup = true;
+	hide_pins("green_pin");
 	show_pins("red_pin");
 }
 
 
 function showOnlyComplaints() {
 	suppress_popup = true;
+	hide_pins("red_pin");
 	show_pins("green_pin");
 }
 
@@ -99,7 +104,7 @@ window.onclick = function(event) {
 function show_pins(pin_class) {
 	pins = document.getElementsByClassName(pin_class);
 	for (var i =0; i < pins.length; i++) {
-		pins[i].style.visibility = "show";
+		pins[i].style.visibility = "visible";
 	}
 	console.log(pins);
 }
