@@ -1,0 +1,95 @@
+#app_frame{
+	background-color: #6CBB3C;
+	height:800px;
+	width:500px;
+	margin: 0 auto;
+	margin-top:100px;
+	border-width:8px;
+	border-style:solid;
+	border-color:black;
+	border-radius:8px;
+	text-align:center;
+	font-family: "Rockwell";
+}
+
+h1{
+	text-align: center;
+	font-size: 35pt;
+	margin-right: -10px;
+	margin-bottom:19px;
+	font-family: "Rockwell";
+
+}
+.input_box{
+	text-align:left;
+	margin:6px;
+	margin-left:10px;
+	font-size: 20px;
+	width: 60%;
+	height:30px;
+	border-radius:4px;
+	border-color:grey;
+	font-family: "Rockwell";
+	padding-left:4px;
+
+}
+
+
+
+#submit_button{
+	text-align:center;
+	font-size: 15pt;
+	height: 45px;
+	width: 160px;
+	margin:10px;
+	border-radius: 5px;
+	margin-top:20px;
+	font-family: "Rockwell";
+	background-color: #FFD700;
+	border-style: solid;
+	border-color: black;
+}
+
+#survey_form{
+	text-align:center;
+
+}
+
+#survey_box{
+	border-radius: 7px;
+	font-size: 20px;
+
+}
+
+#img_div{
+	text-align: center;
+	
+}
+
+#logo_img{
+	margin:25px;
+	width:300px;
+}
+
+#lang_box{
+	width:60%;
+	height:50px;
+	font-size:20px;
+	text-align:left;
+	margin-top: 90px;
+	border-radius:5px;
+	border-color:grey;
+	font-family: "Rockwell";
+}
+
+#bridge_container{
+	width:100%;
+}
+
+#bridge_img{
+	width:100%;
+}
+
+#img_div{
+	margin-top:80px;
+}
