@@ -19,12 +19,20 @@
 		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin4" onclick="showComplaint()">
 		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin5" onclick="showComplaint()">
 
+		<img src="blue_pin.png" alt="pin drop" height="40" width="25" class="blue_pin" id="bpin1" onclick="showEvent()">
+		<img src="blue_pin.png" alt="pin drop" height="40" width="25" class="blue_pin" id="bpin2" onclick="showEvent()">
+		<img src="blue_pin.png" alt="pin drop" height="40" width="25" class="blue_pin" id="bpin3" onclick="showEvent()">
+		<img src="blue_pin.png" alt="pin drop" height="40" width="25" class="blue_pin" id="bpin4" onclick="showEvent()">
+		<img src="blue_pin.png" alt="pin drop" height="40" width="25" class="blue_pin" id="bpin5" onclick="showEvent()">
+
+
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Dropdown</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="#" onclick="showAll()">All</a>
     <a href="#" onclick="showOnlyStories()">Stories</a>
     <a href="#" onclick="showOnlyComplaints()">Complaints</a>
+    <a href="#" onclick="showOnlyEvents()">Events</a>
   </div>
 </div>
 	</div>
@@ -56,6 +64,18 @@ document.getElementById("gpin4").style.left = 70 + "px";
 document.getElementById("gpin4").style.top = 330 + "px";
 document.getElementById("gpin5").style.left = 460 + "px";
 document.getElementById("gpin5").style.top = 480 + "px";
+
+document.getElementById("bpin1").style.left = 140 + "px";
+document.getElementById("bpin1").style.top = 190 + "px";
+document.getElementById("bpin2").style.left = 190 + "px";
+document.getElementById("bpin2").style.top = 500 + "px";
+document.getElementById("bpin3").style.left = 390 + "px";
+document.getElementById("bpin3").style.top = 630 + "px";
+document.getElementById("bpin4").style.left = 670 + "px";
+document.getElementById("bpin4").style.top = 130 + "px";
+document.getElementById("bpin5").style.left = 260 + "px";
+document.getElementById("bpin5").style.top = 480 + "px";
+
 function myFunction() {
 	suppress_popup = true;
 }
@@ -63,11 +83,14 @@ function myFunction() {
 function showAll() {
 	show_pins("green_pin");
 	show_pins("red_pin");
+	show_pins("blue_pin");
+
 }
 
 function showOnlyStories() {
 	suppress_popup = true;
 	hide_pins("green_pin");
+	hide_pins("blue_pin");
 	show_pins("red_pin");
 }
 
@@ -75,7 +98,16 @@ function showOnlyStories() {
 function showOnlyComplaints() {
 	suppress_popup = true;
 	hide_pins("red_pin");
+	hide_pins("blue_pin");
 	show_pins("green_pin");
+}
+
+function showOnlyEvents() {
+	suppress_popup = true;
+	hide_pins("red_pin");
+	hide_pins("green_pin");
+	show_pins("blue_pin");
+
 }
 
 
@@ -131,6 +163,11 @@ function showStory() {
 
 function showComplaint() {
     modal4.style.display = "block";
+    suppress_popup = true;
+}
+
+function showEvent() {
+    modal5.style.display = "block";
     suppress_popup = true;
 }
 
@@ -229,6 +266,12 @@ function makeAddStoryPopup(event){
  	</div>
 </div>
 
+<div id="see_event_model" class="modal">
+	<div class="modal-content">
+   		<span class="close">&times;</span>
+   		<p> This is a test event!! </p>
+ 	</div>
+</div>
 
 <script>
 	function closeAddStoryForm(event) {
@@ -326,6 +369,18 @@ function makeAddStoryPopup(event){
   	    }
   	}
 
+	var modal5 = document.getElementById('see_event_model');
+	// Get the button that opens the modal
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[4];
+ 	span.onclick = function() {
+  	    modal5.style.display = "none";
+  	}	// When the user clicks on the button, open the modal
+	window.onclick = function(event) {
+	    if (event.target == modal4) {
+  		    modal5.style.display = "none";
+  	    }
+  	}
 </script>
 
 

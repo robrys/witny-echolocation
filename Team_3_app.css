@@ -11,12 +11,9 @@
 	border-color: black;
 	border-radius:6px;
 	border-width:5px;
-<<<<<<< HEAD
     /*display: inline;*/
-=======
     width: 500px;
     height: 800px;
->>>>>>> 2922b97c654c2b19b1c417b4995a48bec8fbafc3
 }
 
 .red_pin {
@@ -31,11 +28,15 @@
 	position: absolute;
 	bottom: 0;
 	right:0;
-<<<<<<< HEAD
-=======
     /*z-index: 2;*/
 	/*visibility: hidden;*/
->>>>>>> 2922b97c654c2b19b1c417b4995a48bec8fbafc3
+}
+.blue_pin {
+    position: absolute;
+    bottom: 0;
+    right:0;
+    /*z-index: 2;*/
+    /*visibility: hidden;*/
 }
 
 
@@ -137,7 +138,6 @@
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 
 
 
@@ -185,7 +185,7 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-=======
+
 #map_img{
     position: relative;
 
@@ -203,4 +203,3 @@
     border-width:3px;
  
 }
->>>>>>> master
