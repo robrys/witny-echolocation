@@ -126,6 +126,7 @@
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -173,3 +174,21 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+=======
+#map_img{
+    position: relative;
+    z-index: 1;
+}
+#street_img{
+    position: absolute;
+    bottom: 100px;
+    left: 45px;
+    z-index: 2;
+    width:25%;
+    height:13%;
+    border-style: solid;
+    border-color:black;
+    border-radius:3px;
+    border-width:3px;
+}
+>>>>>>> master
