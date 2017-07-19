@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Team_3_app.css">
+</head>
+<body>
+	<div id="app_frame" onclick="makeMapPopup(event)">
+		<img id="map_img" src="map.jpg" alt="Map View">
+		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin1" onclick="showStory()">
+		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin2" onclick="showStory()">
+
+		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin3" onclick="showStory()">
+		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin4" onclick="showStory()">
+		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin5" onclick="showStory()">
+
+		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin1" onclick="showComplaint()">
+		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin2" onclick="showComplaint()">
+		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin3" onclick="showComplaint()">
+		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin4" onclick="showComplaint()">
+		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin5" onclick="showComplaint()">
+	</div>
+
+<script>
+var suppress_popup = false;
+// set up hard coded red pins
+document.getElementById("pin1").style.left = 40 + "px";
+document.getElementById("pin1").style.top = 40 + "px";
+document.getElementById("pin2").style.left = 40 + "px";
+document.getElementById("pin2").style.top = 40 + "px";
+document.getElementById("pin3").style.left = 120 + "px";
+document.getElementById("pin3").style.top = 430 + "px";
+document.getElementById("pin4").style.left = 400 + "px";
+document.getElementById("pin4").style.top = 300 + "px";
+document.getElementById("pin5").style.left = 330 + "px";
+document.getElementById("pin5").style.top = 600 + "px";
+
+// document.getElementById("gpin1").style.visiblity = "hidden";
+document.getElementById("gpin1").style.left = 90 + "px";
+document.getElementById("gpin1").style.top = 140 + "px";
+document.getElementById("gpin2").style.left = 90 + "px";
+document.getElementById("gpin2").style.top = 140 + "px";
+document.getElementById("gpin3").style.left = 190 + "px";
+document.getElementById("gpin3").style.top = 630 + "px";
+document.getElementById("gpin4").style.left = 70 + "px";
+document.getElementById("gpin4").style.top = 330 + "px";
+document.getElementById("gpin5").style.left = 460 + "px";
+document.getElementById("gpin5").style.top = 480 + "px";
+
+
+// hide_pins("red_pin");
+// show_pins("green_pin");
+
+// only works one time?? no clue why
+function show_pins(pin_class) {
+	pins = document.getElementsByClassName(pin_class);
+	for (var i =0; i < pins.length; i++) {
+		pins[i].style.visibility = "show";
+	}
+	console.log(pins);
+}
+
+// only works one time?? no clue why
+function hide_pins(pin_class) {
+	pins = document.getElementsByClassName(pin_class);
+	for (var i =0; i < pins.length; i++) {
+		pins[i].style.visibility = "hidden";
+	}
+	console.log(pins);
+
+}
+
+
+function showStory() {
+    modal3.style.display = "block";
+    suppress_popup = true;
+}
+
+function showComplaint() {
+    modal4.style.display = "block";
+    suppress_popup = true;
+}
+
+
+var global_clientX, global_clientY;
+
+// When the user clicks on div, open the popup
+function makeMapPopup(event) {
+	var clickEvent = event ? event : window.event;
+    global_clientX = clickEvent.clientX;
+    global_clientY = clickEvent.clientY;
+	if (suppress_popup == true) {
+		suppress_popup = false;
+		return;
+	}
+    var popup = document.getElementById("mapPopupText");
+    document.getElementById("mapPopup").style.position = "absolute";
+    document.getElementById("mapPopup").style.left = clickEvent.clientX + "px";
+    document.getElementById("mapPopup").style.top = clickEvent.clientY + "px";
+    popup.classList.toggle("show");
+
+}
+
+function makeAddStoryPopup(event){
+	var clickEvent = event ? event : window.event;
+    var popup = document.getElementById("addStoryPopupText");
+    popup.classList.toggle("show");
+	alert(event.screenX);
+
+}
+</script>
+
+
+
+
+
+<div class="popup" id="mapPopup">
+  <span class="popuptext" id="mapPopupText">
+	<div>
+		<!-- button that triggers modal pop up -->
+		<div id="myBtn">+ Add Story<br></div>
+		<div id="file_complaint_btn">+ File complaint<br></div>
+
+		<!-- Trigger/Open The Modal -->
+
+	    <!-- <div class="popup" id="seeStoryPopup"> -->
+		  	<!-- + See story -->
+		</div>
+	  </span>
+</div>
+
+
+<div id="myModal" class="modal">
+	<div class="modal-content">
+   		<span class="close">&times;</span>
+   		<p>			    
+	    <form>
+	    <textarea rows="4" cols="50" placeholder="Please enter your story!" name="story_text"></textarea>
+	    <br><br>
+	    <button type="button" id="attach_file">Attach image/video </button>
+	    <br><br>
+	    <button type="button" onclick="closeAddStoryForm()" id="story_submit">Submit!</button>
+	    </form>
+	    </p>
+ 	</div>
+</div>
+
+<div id="complaint_modal" class="modal">
+	<div class="modal-content">
+   		<span class="close">&times;</span>
+   		<p>			    
+	    <form>
+	    <textarea rows="4" cols="50" placeholder="Please enter your complaint." name="complaint_text"></textarea>
+	    <br><br>
+	    <br><br>
+	    <button type="button" onclick="closeFileComplaintForm()" id="complaint_submit">Submit!</button>
+	    </form>
+	    </p>
+ 	</div>
+</div>
+
+
+<div id="see_story_modal" class="modal">
+	<div class="modal-content">
+   		<span class="close">&times;</span>
+   		<p> This is a test story!! </p>
+ 	</div>
+</div>
+
+
+<div id="see_complaint_model" class="modal">
+	<div class="modal-content">
+   		<span class="close">&times;</span>
+   		<p> This is a test complaint!! </p>
+ 	</div>
+</div>
+
+
+<script>
+	function closeAddStoryForm(event) {
+      	modal.style.display = "none";
+   	    document.getElementById("pin1").style.left = global_clientX + "px";
+	    document.getElementById("pin1").style.top = global_clientY + "px";
+	}
+
+	function closeFileComplaintForm(event) {
+      	modal2.style.display = "none";
+   	    document.getElementById("gpin1").style.left = global_clientX + "px";
+	    document.getElementById("gpin1").style.top = global_clientY + "px";
+	}
+
+	// Get the modal
+	var modal = document.getElementById('myModal');
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	// When the user clicks on the button, open the modal 
+	btn.onclick = function() {
+ 	    modal.style.display = "block";
+	    var popup = document.getElementById("mapPopupText");
+       	popup.classList.toggle("show");
+
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+  	    modal.style.display = "none";
+  	}
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal) {
+  		    modal.style.display = "none";
+  	    }
+	}
+
+	// Get the modal
+	var modal2 = document.getElementById('complaint_modal');
+	// Get the button that opens the modal
+	var btn = document.getElementById("file_complaint_btn");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[1];
+	// When the user clicks on the button, open the modal 
+	btn.onclick = function() {
+ 	    modal2.style.display = "block";
+	    var popup = document.getElementById("mapPopupText");
+       	popup.classList.toggle("show");
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+  	    modal2.style.display = "none";
+  	}
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal2) {
+  		    modal2.style.display = "none";
+  	    }
+	}
+
+
+
+
+	var modal3 = document.getElementById('see_story_modal');
+	// Get the button that opens the modal
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[2];
+ 	span.onclick = function() {
+  	    modal3.style.display = "none";
+  	}	// When the user clicks on the button, open the modal 
+
+
+	// When the user clicks on <span> (x), close the modal
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal3) {
+  		    modal3.style.display = "none";
+  	    }
+	}
+
+
+	var modal4 = document.getElementById('see_complaint_model');
+	// Get the button that opens the modal
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[3];
+ 	span.onclick = function() {
+  	    modal4.style.display = "none";
+  	}	// When the user clicks on the button, open the modal 
+	window.onclick = function(event) {
+	    if (event.target == modal4) {
+  		    modal4.style.display = "none";
+  	    }
+  	}
+
+</script>
+
+
+
+
+</body>
+</html>
