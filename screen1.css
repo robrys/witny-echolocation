@@ -1,0 +1,91 @@
+#app_frame{
+	background-color: #9ACD32;
+	height:800px;
+	width:500px;
+	margin: 0 auto;
+	margin-top:100px;
+	border-width:8px;
+	border-style:solid;
+	border-color:black;
+	border-radius:8px;
+	font-family: "Rockwell";
+}
+
+#form_container{
+	font-size: 25px;
+	font-family: "Rockwell";
+}
+
+
+h1{
+	font-size: 40px;
+font-family: "Rockwell";
+}
+
+#login_form{
+	text-align: center;
+	font-family: "Rockwell";
+
+}
+
+#code_form{
+	text-align:center;
+	padding-top:28px;
+	font-family: "Rockwell";
+}
+
+.form_input{
+	
+	padding: 3px;
+	margin:10px;
+	margin-left:5px;
+	width:200px;
+	height:30px;
+	border-style: solid;
+	border-color:black;
+	border-width:1px;
+	border-radius: 4px;
+	font-family: "Rockwell";
+	font-size: 17px;
+}
+
+#resident_box, #comm_dev_box, #resident_box{
+	margin: 0px;
+	font-family: "Rockwell";
+}
+
+
+#code{
+}
+
+#button{
+	width: 260px;
+	height:50px;
+	border-style:solid;
+	border-color:black;
+	border-radius:5px;
+	border-width: 1px;
+	font-family: "Rockwell";
+	background-color: #FFD700;
+	font-size:20px;
+}
+
+
+
+
+#checkbox_list{
+	list-style: none;
+	text-align:right;
+	width:290px;
+	margin-right: 100px;
+	font-family: "Rockwell";
+}
+
+#bridge_div{
+	width:100%;
+
+}
+
+#bridge_img{
+	width:100%;
+}
