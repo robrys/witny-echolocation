@@ -12,6 +12,8 @@
 	border-color: black;
 	border-radius:6px;
 	border-width:5px;
+    width: 500px;
+    height: 800px;
 }
 
 .red_pin {
@@ -19,12 +21,14 @@
 	bottom: 0;
 	right:0;
 	/*visibility: hidden;*/
+    /*z-index: 2;*/
 }
 
 .green_pin {
 	position: absolute;
 	bottom: 0;
 	right:0;
+    /*z-index: 2;*/
 	/*visibility: hidden;*/
 }
 
@@ -129,7 +133,7 @@
 
 #map_img{
     position: relative;
-    z-index: 1;
+
 }
 #street_img{
     position: absolute;
@@ -142,4 +146,5 @@
     border-color:black;
     border-radius:3px;
     border-width:3px;
+ 
 }
