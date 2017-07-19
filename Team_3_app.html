@@ -214,6 +214,7 @@ function makeAddStoryPopup(event){
 		<!-- button that triggers modal pop up -->
 		<div id="myBtn">+ Add Story<br></div>
 		<div id="file_complaint_btn">+ File complaint<br></div>
+		<div id="add_event_btn">+ Add Event <br></div>
 
 		<!-- Trigger/Open The Modal -->
 
@@ -276,6 +277,20 @@ function makeAddStoryPopup(event){
    		<p> This is a test event!! </p>
  	</div>
 </div>
+<div id="add_event_modal" class="modal">
+	<div class="modal-content">
+   		<span class="close">&times;</span>
+   		<p>
+	    <form>
+	    <textarea rows="4" cols="50" placeholder="Please add your event!" name="story_text"></textarea>
+	    <br><br>
+	    <button type="button" id="attach_file">Attach image/video </button>
+	    <br><br>
+	    <button type="button" onclick="closeAddEventForm()" id="story_submit">Submit!</button>
+	    </form>
+	    </p>
+ 	</div>
+</div>
 
 <script>
 	function closeAddStoryForm(event) {
@@ -288,6 +303,12 @@ function makeAddStoryPopup(event){
       	modal2.style.display = "none";
    	    document.getElementById("gpin1").style.left = global_clientX + "px";
 	    document.getElementById("gpin1").style.top = global_clientY + "px";
+	}
+
+	function closeAddEventForm(event) {
+      	modal6.style.display = "none";
+   	    document.getElementById("bpin1").style.left = global_clientX + "px";
+	    document.getElementById("bpin1").style.top = global_clientY + "px";
 	}
 
 	// Get the modal
@@ -385,6 +406,34 @@ function makeAddStoryPopup(event){
   		    modal5.style.display = "none";
   	    }
   	}
+
+
+
+	// Get the modal
+	var modal6 = document.getElementById('add_event_modal');
+	// Get the button that opens the modal
+	var btn = document.getElementById("add_event_btn");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[5];
+	// When the user clicks on the button, open the modal
+	btn.onclick = function() {
+ 	    modal6.style.display = "block";
+	    var popup = document.getElementById("mapPopupText");
+       	popup.classList.toggle("show");
+	}
+
+	// When the user clicks on <span> (x), close the modalx
+	span.onclick = function() {
+  	    modal6.style.display = "none";
+  	}
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal6) {
+  		    modal6.style.display = "none";
+  	    }
+	}
+
+
 </script>
 
 
