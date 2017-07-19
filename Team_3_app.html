@@ -9,7 +9,6 @@
 		<img id="map_img" src="map.jpg" alt="Map View">
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin1" onclick="showStory()">
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin2" onclick="showStory()">
-
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin3" onclick="showStory()">
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin4" onclick="showStory()">
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin5" onclick="showStory()">
@@ -19,11 +18,23 @@
 		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin3" onclick="showComplaint()">
 		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin4" onclick="showComplaint()">
 		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin5" onclick="showComplaint()">
+
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#" onclick="showOnlyStories()">Stories</a>
+    <a href="#" onclick="showOnlyComplaints()">Complaints</a>
+  </div>
+</div>
+
 	</div>
 
+
+
 <script>
-var suppress_popup = false;
 // set up hard coded red pins
+var suppress_popup = false;
 document.getElementById("pin1").style.left = 40 + "px";
 document.getElementById("pin1").style.top = 40 + "px";
 document.getElementById("pin2").style.left = 40 + "px";
@@ -47,9 +58,42 @@ document.getElementById("gpin4").style.top = 330 + "px";
 document.getElementById("gpin5").style.left = 460 + "px";
 document.getElementById("gpin5").style.top = 480 + "px";
 
+function showOnlyStories() {
+	suppress_popup = true;
+	show_pins("red_pin");
+}
+
+
+function showOnlyComplaints() {
+	suppress_popup = true;
+	show_pins("green_pin");
+}
+
 
 // hide_pins("red_pin");
 // show_pins("green_pin");
+
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 // only works one time?? no clue why
 function show_pins(pin_class) {
@@ -152,6 +196,7 @@ function makeAddStoryPopup(event){
 	    <form>
 	    <textarea rows="4" cols="50" placeholder="Please enter your complaint." name="complaint_text"></textarea>
 	    <br><br>
+	    <input type="checkbox" checked> Anonymous 
 	    <br><br>
 	    <button type="button" onclick="closeFileComplaintForm()" id="complaint_submit">Submit!</button>
 	    </form>
@@ -227,7 +272,7 @@ function makeAddStoryPopup(event){
        	popup.classList.toggle("show");
 	}
 
-	// When the user clicks on <span> (x), close the modal
+	// When the user clicks on <span> (x), close the modalx
 	span.onclick = function() {
   	    modal2.style.display = "none";
   	}
