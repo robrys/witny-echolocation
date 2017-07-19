@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div id="app_frame" onclick="makeMapPopup(event)">
-		<img id="map_img" src="map.jpg" alt="Map View">
+		<img id="map_img" src="map1.jpg" alt="Map View">
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin1" onclick="showStory()">
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin2" onclick="showStory()">
 		<img src="red_pin.png" alt="pin drop" height="40" width="25" class="red_pin" id="pin3" onclick="showStory()">
@@ -19,8 +19,6 @@
 		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin4" onclick="showComplaint()">
 		<img src="green_pin.png" alt="pin drop" height="40" width="25" class="green_pin" id="gpin5" onclick="showComplaint()">
 
-<<<<<<< HEAD
-
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Dropdown</button>
   <div id="myDropdown" class="dropdown-content">
@@ -28,23 +26,10 @@
     <a href="#" onclick="showOnlyComplaints()">Complaints</a>
   </div>
 </div>
-=======
-		<!-- <div id="street_img_container"> -->
-			<img src="street_view.jpg" alt="street" id="street_img">
-		<!-- </div> -->
-
->>>>>>> master
-
 	</div>
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> master
 <script>
 // set up hard coded red pins
 var suppress_popup = false;
@@ -92,7 +77,7 @@ function showOnlyComplaints() {
 // show_pins("green_pin");
 
 
-/* When the user clicks on the button, 
+/* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -195,7 +180,7 @@ function makeAddStoryPopup(event){
 <div id="myModal" class="modal">
 	<div class="modal-content">
    		<span class="close">&times;</span>
-   		<p>			    
+   		<p>
 	    <form>
 	    <textarea rows="4" cols="50" placeholder="Please enter your story!" name="story_text"></textarea>
 	    <br><br>
@@ -210,11 +195,11 @@ function makeAddStoryPopup(event){
 <div id="complaint_modal" class="modal">
 	<div class="modal-content">
    		<span class="close">&times;</span>
-   		<p>			    
+   		<p>
 	    <form>
 	    <textarea rows="4" cols="50" placeholder="Please enter your complaint." name="complaint_text"></textarea>
 	    <br><br>
-	    <input type="checkbox" checked> Anonymous 
+	    <input type="checkbox" checked> Anonymous
 	    <br><br>
 	    <button type="button" onclick="closeFileComplaintForm()" id="complaint_submit">Submit!</button>
 	    </form>
@@ -258,7 +243,7 @@ function makeAddStoryPopup(event){
 	var btn = document.getElementById("myBtn");
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
-	// When the user clicks on the button, open the modal 
+	// When the user clicks on the button, open the modal
 	btn.onclick = function() {
  	    modal.style.display = "block";
 	    var popup = document.getElementById("mapPopupText");
@@ -283,7 +268,7 @@ function makeAddStoryPopup(event){
 	var btn = document.getElementById("file_complaint_btn");
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[1];
-	// When the user clicks on the button, open the modal 
+	// When the user clicks on the button, open the modal
 	btn.onclick = function() {
  	    modal2.style.display = "block";
 	    var popup = document.getElementById("mapPopupText");
@@ -310,7 +295,7 @@ function makeAddStoryPopup(event){
 	var span = document.getElementsByClassName("close")[2];
  	span.onclick = function() {
   	    modal3.style.display = "none";
-  	}	// When the user clicks on the button, open the modal 
+  	}	// When the user clicks on the button, open the modal
 
 
 	// When the user clicks on <span> (x), close the modal
@@ -328,7 +313,7 @@ function makeAddStoryPopup(event){
 	var span = document.getElementsByClassName("close")[3];
  	span.onclick = function() {
   	    modal4.style.display = "none";
-  	}	// When the user clicks on the button, open the modal 
+  	}	// When the user clicks on the button, open the modal
 	window.onclick = function(event) {
 	    if (event.target == modal4) {
   		    modal4.style.display = "none";
